@@ -1,6 +1,6 @@
 {
   "name": "pi-code-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pi extension that formats files after every Edit tool call, updating the patch/diff to include formatting changes",
   "keywords": ["pi-package", "pi-extension", "formatter", "autoformat"],
   "license": "MIT",

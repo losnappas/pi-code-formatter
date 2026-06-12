@@ -7,6 +7,7 @@
 import type { ExtensionAPI, EditToolDetails } from "@earendil-works/pi-coding-agent";
 import { readFile } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
+import { homedir } from "node:os";
 import * as Diff from "diff";
 
 // ── Config types ──────────────────────────────────────────────────────
@@ -34,8 +35,7 @@ let resolvedFormatters: ResolvedFormatter[] = [];
 // ── Config loading ────────────────────────────────────────────────────
 
 function getGlobalConfigPath(): string {
-  const extDir = dirname(new URL(import.meta.url).pathname);
-  return resolve(extDir, "config.json");
+  return resolve(homedir(), ".pi", "agent", "extensions", "pi-code-formatter", "config.json");
 }
 
 function getProjectConfigPath(cwd: string): string {
